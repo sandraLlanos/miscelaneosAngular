@@ -29,3 +29,17 @@
    [ngClass]="{'btn-danger': propiedadesBtn.danger, 'btn-info': !propiedadesBtn.danger}">
     Cambiar Color
   </button>
+
+  <br><hr>
+
+  <h3>Proceso Asíncrono usando <strong>ngClass</strong></h3>
+
+  <button
+    (click)="ejecutar()"
+    class="btn btn-primary"
+    [disabled]="loading">
+    <em [ngClass]="{'fa-refresh fa-spin' : loading, 'fa-save' : !loading}" class="fa"></em>
+    <span *ngIf="!loading"> Guardar Cambios</span>
+    <span *ngIf="loading"> Espera Por favor</span>
+    
+  </button>
