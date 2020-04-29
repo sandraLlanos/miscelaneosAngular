@@ -1,0 +1,31 @@
+
+<div class="alert alert-primary" role="alert">
+  Un Alert Usando la clase de bootstrap
+</div>
+<div [ngClass]="'alert-primary'" class="alert" role="alert">
+  Un Alert Usando la ngClass =  alert-primary de bootstrap
+</div>
+<div [ngClass]="alerta" class="alert" role="alert">
+  Un Alert Usando la ngClass y una variable alerta
+</div>
+<div [ngClass]="alertaBtn" class="alert" role="alert">
+  Este es un Alert que cambia usando una variable y el evento click
+</div>
+
+<button class="btn btn-info" (click)="alertaBtn='alert-info'">info</button>
+<button class="btn btn-success" (click)="alertaBtn='alert-success'">success</button>
+ <br><br>
+
+ <h3 [ngClass]="{ 'text-info': true  }">
+   Este texto tiene 'text-info': true
+  </h3>
+ <h3 [ngClass]="{ 'text-danger': propiedades.danger, 'text-info': !propiedades.danger  }">
+   Este texto cambia segun el valor del objeto 'propiedades.danger'
+  </h3>
+ <h3 [ngClass]="{ 'text-danger': propiedadesBtn.danger, 'text-info': !propiedadesBtn.danger  }">
+  Este texto cambia segun el valor del objeto 'propiedadesBtn.danger' co un evento click
+  </h3>
+  <button class="btn" (click)="propiedadesBtn.danger = !propiedadesBtn.danger"
+   [ngClass]="{'btn-danger': propiedadesBtn.danger, 'btn-info': !propiedadesBtn.danger}">
+    Cambiar Color
+  </button>
