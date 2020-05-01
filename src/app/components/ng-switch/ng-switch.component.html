@@ -1,0 +1,42 @@
+<span [ngSwitch]="alerta">
+<p *ngSwitchCase="'success'">success</p>
+<p *ngSwitchCase="'warning'">warning</p>
+<p *ngSwitchCase="'danger'">danger</p>
+<p *ngSwitchDefault>Default</p>
+</span>
+
+<button (click)="alerta='success'" class="btn btn-primary" >Cambiar Alerta</button>
+
+<div class="form-group">
+  <label>Seleccione Alerta</label>
+  <select multiple class="form-control" id="exampleFormControlSelect2">
+    <option (click)="alerta='success'" >success</option>
+    <option (click)="alerta='warning'" >warning </option>
+    <option (click)="alerta='danger'" > danger </option>
+  </select>
+</div>
+
+<!-- <div class="form-group">
+  <label for="exampleFormControlSelect1">Seleccione Alerta</label>
+  <select class="form-control" id="exampleFormControlSelect1">
+    <option (click)="alerta='success'"  >success</option>
+    <option (click)="alerta='warning'" >warning </option>
+    <option (click)="alerta='danger'" > danger </option>
+  </select>
+</div> -->
+<div [ngSwitch]="alerta">
+
+   <div *ngSwitchCase="'success'" class="alert alert-success" role="alert">
+    A simple success alert—check it out!
+  </div>
+  <div *ngSwitchCase="'danger'" class="alert alert-danger" role="alert">
+    A simple danger alert—check it out!
+  </div>
+  <div *ngSwitchCase="'warning'"  class="alert alert-warning" role="alert">
+    A simple warning alert—check it out!
+  </div>
+  <div *ngSwitchDefault class="alert alert-info" role="alert">
+    A simple info alert—check it out!
+  </div>  
+
+</div>
